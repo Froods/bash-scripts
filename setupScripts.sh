@@ -8,9 +8,9 @@ read bashrc
 if [ -d "$dirPath" ]; then
     mkdir "$dirPath"/scripts
     
-    #mkSite
-    touch "$dirPath"/scripts/mkSite.sh
-    cat << EOF > "$dirPath"/scripts/mkSite.sh
+    #mksite
+    touch "$dirPath"/scripts/mksite.sh
+    cat << EOF > "$dirPath"/scripts/mksite.sh
 #!/usr/bin/bash
 
 if [ -n "\$1" ]; then
@@ -36,16 +36,16 @@ if [ -n "\$1" ]; then
     cd "\$1"
     code .
 else
-    echo "Usage: mkSite [NAME]"
+    echo "Usage: mksite [NAME]"
 fi
 EOF
     # end
 
     # Giving permissions to script
-    chmod +x "$dirPath"/scripts/mkSite.sh
+    chmod +x "$dirPath"/scripts/mksite.sh
 
     # Converting scripts to commands
-    echo "alias mkSite='"$dirPath"/scripts/mkSite.sh'" >> "$bashrc"
+    echo "alias mksite='"$dirPath"/scripts/mksite.sh'" >> "$bashrc"
 
     source "$bashrc"
 
